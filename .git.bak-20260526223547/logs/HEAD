@@ -1,0 +1,6 @@
+0000000000000000000000000000000000000000 91dc0a93ebde818b339382703d8252d0b800d45a Althea Bata <aaltheaa@users.noreply.github.com> 1779859340 -0700	commit (initial): Add README
+91dc0a93ebde818b339382703d8252d0b800d45a 0000000000000000000000000000000000000000 Althea Bata <aaltheaa@users.noreply.github.com> 1779859340 -0700	Branch: renamed refs/heads/main to refs/heads/main
+91dc0a93ebde818b339382703d8252d0b800d45a 91dc0a93ebde818b339382703d8252d0b800d45a Althea Bata <aaltheaa@users.noreply.github.com> 1779859340 -0700	Branch: renamed refs/heads/main to refs/heads/main
+91dc0a93ebde818b339382703d8252d0b800d45a 1395e687b727a05d8d15531329cc60966eae64ee Althea Bata <aaltheaa@users.noreply.github.com> 1779859520 -0700	commit: Add project files and .gitignore; improve README
+1395e687b727a05d8d15531329cc60966eae64ee 59fc31ac37fb490670bcf0d20547f72d14be23e6 Althea Bata <aaltheaa@users.noreply.github.com> 1779859700 -0700	commit: Remove .gitignore and .env.example from repo (keep locally)
+59fc31ac37fb490670bcf0d20547f72d14be23e6 8649f2efb002ba2fd99cef79d126c92d83759d69 Althea Bata <aaltheaa@users.noreply.github.com> 1779859996 -0700	commit: Docs: detailed README — mission, features, how it works

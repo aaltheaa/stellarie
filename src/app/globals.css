@@ -1,0 +1,157 @@
+/* src/app/globals.css */
+@import "tailwindcss";
+
+@theme {
+  --color-space: #06090f;
+  --color-space-mid: #0b1120;
+  --color-space-surface: #101926;
+  --color-star: #ede9e0;
+  --color-star-dim: #c4c0ba;
+  --color-accent: #b0a0d8;
+  --color-accent-glow: rgba(176, 160, 216, 0.18);
+  --color-highlight: #e8bc58;
+  --color-highlight-glow: rgba(232, 188, 88, 0.2);
+  --color-danger: #d97070;
+  --color-line: rgba(176, 160, 216, 0.3);
+  --color-border: rgba(176, 160, 216, 0.12);
+
+  --font-cinzel: "Cinzel", Georgia, serif;
+  --font-mono: "Space Mono", "Courier New", monospace;
+  --font-body: "Crimson Pro", "Georgia", serif;
+
+  --radius-sm: 3px;
+  --radius-md: 6px;
+  --radius-lg: 12px;
+
+  --shadow-star: 0 0 10px rgba(176, 160, 216, 0.5), 0 0 28px rgba(176, 160, 216, 0.15);
+  --shadow-gold: 0 0 8px rgba(232, 188, 88, 0.5), 0 0 24px rgba(232, 188, 88, 0.12);
+}
+
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+  }
+
+  body {
+    background-color: var(--color-space);
+    color: var(--color-star);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    min-height: 100dvh;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background: rgba(176, 160, 216, 0.35);
+    color: var(--color-star);
+  }
+
+  ::-webkit-scrollbar {
+    width: 3px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(176, 160, 216, 0.2);
+    border-radius: 2px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(176, 160, 216, 0.4);
+  }
+}
+
+@layer utilities {
+  /* Noise grain overlay */
+  .star-noise {
+    position: relative;
+  }
+  .star-noise::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.55;
+  }
+
+  /* Scattered star dots painted via CSS */
+  .starfield-bg {
+    background-image:
+      radial-gradient(1px 1px at 12% 18%, rgba(255,255,255,0.45) 0%, transparent 100%),
+      radial-gradient(1px 1px at 27% 73%, rgba(255,255,255,0.3) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 41% 9%, rgba(255,255,255,0.55) 0%, transparent 100%),
+      radial-gradient(1px 1px at 55% 88%, rgba(255,255,255,0.25) 0%, transparent 100%),
+      radial-gradient(1px 1px at 68% 31%, rgba(255,255,255,0.4) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 78% 56%, rgba(255,255,255,0.5) 0%, transparent 100%),
+      radial-gradient(1px 1px at 91% 14%, rgba(255,255,255,0.35) 0%, transparent 100%),
+      radial-gradient(1px 1px at 8% 62%, rgba(255,255,255,0.3) 0%, transparent 100%),
+      radial-gradient(1px 1px at 34% 44%, rgba(255,255,255,0.2) 0%, transparent 100%),
+      radial-gradient(1px 1px at 62% 67%, rgba(255,255,255,0.3) 0%, transparent 100%),
+      radial-gradient(2px 2px at 84% 82%, rgba(176,160,216,0.35) 0%, transparent 100%),
+      radial-gradient(1px 1px at 19% 91%, rgba(255,255,255,0.25) 0%, transparent 100%),
+      radial-gradient(1px 1px at 49% 28%, rgba(255,255,255,0.2) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 73% 7%, rgba(255,255,255,0.4) 0%, transparent 100%),
+      radial-gradient(1px 1px at 96% 48%, rgba(255,255,255,0.3) 0%, transparent 100%),
+      radial-gradient(1px 1px at 3% 37%, rgba(255,255,255,0.25) 0%, transparent 100%),
+      radial-gradient(2px 2px at 22% 55%, rgba(232,188,88,0.2) 0%, transparent 100%),
+      radial-gradient(1px 1px at 57% 16%, rgba(255,255,255,0.35) 0%, transparent 100%),
+      radial-gradient(1px 1px at 87% 93%, rgba(255,255,255,0.2) 0%, transparent 100%),
+      radial-gradient(1px 1px at 44% 79%, rgba(255,255,255,0.3) 0%, transparent 100%);
+  }
+
+  .glow-accent { box-shadow: var(--shadow-star); }
+  .glow-gold   { box-shadow: var(--shadow-gold); }
+
+  .font-cinzel { font-family: var(--font-cinzel); }
+  .font-mono   { font-family: var(--font-mono); }
+  .font-body   { font-family: var(--font-body); }
+}
+
+/* ── Keyframes ─────────────────────────────────────────────────────────────── */
+
+@keyframes twinkle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.45; transform: scale(0.8); }
+}
+
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes pulseGold {
+  0%, 100% { box-shadow: 0 0 6px rgba(232,188,88,0.25); }
+  50%       { box-shadow: 0 0 20px rgba(232,188,88,0.6); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes rotateSlow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.animate-twinkle        { animation: twinkle 3.5s ease-in-out infinite; }
+.animate-fade-slide-up  { animation: fadeSlideUp 0.4s ease-out both; }
+.animate-fade-in        { animation: fadeIn 0.3s ease-out both; }
+.animate-pulse-gold     { animation: pulseGold 2.5s ease-in-out infinite; }
+.animate-spin-slow      { animation: rotateSlow 8s linear infinite; }
